@@ -1,9 +1,10 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import styles from './Prato.module.scss';
 import cardapio from 'data/cardapio.json';
-import TagsPrato from 'components/TagsPratos';
 import NotFound from 'pages/NotFound';
+import TagsPrato from 'components/TagsPratos';
+import PaginaPadrao from 'components/PaginaPadrao';
+import styles from './Prato.module.scss';
 
 export default function Prato() {
   const { id } = useParams();
@@ -16,7 +17,7 @@ export default function Prato() {
   }
 
   return (
-    <>
+    <PaginaPadrao>
       <button onClick={() => navigate(-1)} className={styles.voltar}>
         {'< Voltar'}
       </button>
@@ -27,6 +28,6 @@ export default function Prato() {
         </div>
         <TagsPrato {...prato} />
       </section>
-    </>
+    </PaginaPadrao>
   );
 }
