@@ -1,5 +1,6 @@
 import React from 'react';
 import cardapio from 'data/cardapio.json';
+import nossaCasa from 'assets/nossa_casa.png';
 import styles from './Inicio.module.scss';
 import StylesTema from 'styles/Tema.module.scss';
 
@@ -23,6 +24,14 @@ export default function Inicio() {
             </div>
           );
         })}
+      </div>
+      <h3 className={StylesTema.titulo}>Nossa casa</h3>
+      <div className={styles.nossaCasa}>
+        <img src={nossaCasa} alt='Casa do aluroni' />
+        <div className={styles.nossaCasa__endereco}>
+          Rua Vergueiro, 3185 <br />
+          <br /> Vila Mariana - SP
+        </div>
       </div>
     </section>
   );
